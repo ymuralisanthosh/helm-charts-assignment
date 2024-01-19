@@ -1,0 +1,27 @@
+redapp:
+  replicaCount: 3
+  image:
+    repository: "709087243859.dkr.ecr.ap-south-1.amazonaws.com/redapp"
+    tag: "latest"
+  service:
+    name: "redapp-service"
+    port: 8080
+  ingress:
+    enabled: true
+    path: /redapp
+    hosts:
+      - host: "EF4EEF8D765239CC7CF9BCFBE25840CB.gr7.ap-south-1.eks.amazonaws.com"
+
+whiteapp:
+  replicaCount: 2
+  image:
+    repository: "709087243859.dkr.ecr.ap-south-1.amazonaws.com/whiteapp"
+    tag: "latest"
+  service:
+    name: "whiteapp-service"
+    port: 8080
+  ingress:
+    enabled: true
+    path: /whiteapp
+    hosts:
+      - host: "EF4EEF8D765239CC7CF9BCFBE25840CB.gr7.ap-south-1.eks.amazonaws.com"

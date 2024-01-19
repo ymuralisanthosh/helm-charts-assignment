@@ -1,0 +1,8 @@
+{{/*
+Compute the fullname of the release.
+We append a suffix here to ensure uniqueness of the name.
+*/}}
+{{- define "redapp.fullname" -}}
+{{- printf "%s-%s" .Release.Name .Chart.Name }}
+{{- end }}
+

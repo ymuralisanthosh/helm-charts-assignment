@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: combined-ingress
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/target-type: ip
+spec:
+  rules:
+    - host: redapp.assignment
+      http:
+        paths:
+          - path: /redapp
+            pathType: Prefix
+            backend:
+              service:
+                name: redapp-service
+                port:
+                  number: 8080
+    - host: whiteapp.assignment
+      http:
+        paths:
+          - path: /whiteapp
+            pathType: Prefix
+            backend:
+              service:
+                name: whiteapp-service
+                port:
+                  number: 8080
+

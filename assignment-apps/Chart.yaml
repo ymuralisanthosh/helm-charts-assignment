@@ -1,0 +1,6 @@
+# assignment-apps/Chart.yaml
+apiVersion: v2
+name: assignment-apps
+description: A Helm chart for deploying red-app and white-app.
+version: 0.1.0
+
